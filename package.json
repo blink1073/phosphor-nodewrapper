@@ -8,9 +8,11 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "browserify": "^11.0.1",
     "dts-generator": "^1.5.0",
     "expect.js": "^0.3.1",
     "mocha": "^2.2.5",
+    "opener": "^1.4.1",
     "rimraf": "^2.4.2",
     "typedoc": "^0.3.8",
     "typescript": "^1.5.3"
@@ -19,11 +21,11 @@
     "clean": "rimraf lib && rimraf test/*.js",
     "build:src": "tsc --project src",
     "build:dts": "node scripts/dtsbundle.js",
-    "build:test": "tsc --project test",
+    "build:test": "tsc --project test && browserify test/testnodewrapper.js -o test/bundle.js",
     "build": "npm run build:src && npm run build:dts && npm run build:test",
     "docs": "rimraf docs/api && typedoc --options scripts/tdoptions.json",
     "prepublish": "npm run build",
-    "test": "mocha test/test*.js"
+    "test": "opener test/index.html"
   },
   "repository": {
     "type": "git",
