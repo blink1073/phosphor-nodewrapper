@@ -6,7 +6,7 @@ env:
   matrix:
     - GROUP=
   global:
-    - secure:
+    - secure: y4Yac4uz9YOWZafIt73wTwcbDfR+7un5yHLMlTYb5joF8NAbqkl1CSgHjeduqwVxwWWFhjki+EH0LfKfrLSNjaR4OI3XPNsnU2kxViTk8gcq96SiZCPU1IPkB7NlIlPBjXVL78Hj9hXWtjc1OzBvaByxrb9OFTc8QWrdPaJqSHjLz6uukVQs3GDLcxkEbJtxlyKpPXRRUSDUAN8VyNPYWYVqEqArqG1ZzufjwuxnoPiWW9TAgBKUmvYsfE+nxkVDXeuNmLQiL7iSsZtYhPRqW8Idgy69SKRo/GkCDunPdnpmAi68us5reLQKJ7s3R09BZ5kMPNhHWuRWDQ/4ZJ2whBxzguuyT8ccFHpZTnElU4k4MBKKMYU4JdF+NZKrEeX6olePiCoMGSO29UqYuCkBgB1LQw2tAnHMcEx9QPSftwGVo8fYlX9LvsRA2q9IzZQBP/bf9ijxZ0qqi5GxFfxqTWrH9AfCoUVAnk/INbbh9eFaK4pzMrQ+NJsoiqyb9uTuhRQEJtlKfYQvXnViUmK25tu7nrMy1tn/5onulAEPvB5IP6PeLttKiEeRZWyD/ABp254K0e7SGeAmvdPtT3rVRKKX0wCQ9RttYCpdQLllyHOyij4u44u3ceThkii1DQzt01Jn6p3R7c6v7bL8FaIZon5IWJU7suGlXMWnVFal1m0=
 before_install:
   - chmod +x ./scripts/travis_install.sh
   - chmod +x ./scripts/travis_script.sh
