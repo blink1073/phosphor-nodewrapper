@@ -93,13 +93,13 @@ class NodeWrapper {
   }
 
   /**
-   * Toggle class name on the wrapper's DOM node.
+   * Toggle a class name on the wrapper's DOM node.
    *
-   * @param name - The class name to add or remove.
+   * @param name - The class name to toggle on the node.
    *
    * @param force - Whether to force add the class (`true`) or force
-   *   remove the class (`false`). If not provided, the class will be
-   *   added if not present, or removed if present.
+   *   remove the class (`false`). If not provided, the presence of
+   *   the class will be toggled from its current state.
    *
    * @returns `true` if the class is now present, `false` otherwise.
    */
