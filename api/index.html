@@ -91,7 +91,14 @@ npm run build
 </code></pre>
 				<h2 id="run-tests">Run Tests</h2>
 				<p>Follow the source build instructions first.</p>
-				<pre><code class="lang-bash">npm <span class="hljs-built_in">test</span>
+				<pre><code class="lang-bash"><span class="hljs-comment"># run tests in Firefox</span>
+npm <span class="hljs-built_in">test</span>
+
+<span class="hljs-comment"># run tests in Chrome</span>
+npm run <span class="hljs-built_in">test</span>:chrome
+
+<span class="hljs-comment"># run tests in IE</span>
+npm run <span class="hljs-built_in">test</span>:ie
 </code></pre>
 				<h2 id="build-docs">Build Docs</h2>
 				<p>Follow the source build instructions first.</p>
@@ -107,6 +114,45 @@ npm run build
 					<li>Chrome 38+</li>
 				</ul>
 				<h2 id="usage-examples">Usage Examples</h2>
+				<p><strong>Note:</strong> This module is fully compatible with Node/Babel/ES6/ES5. Simply
+				omit the type declarations when using a language other than TypeScript.</p>
+				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { NodeWrapper } from <span class="hljs-string">'phosphor-nodewrapper'</span>;
+
+
+<span class="hljs-keyword">class</span> Button extends NodeWrapper {
+
+  <span class="hljs-keyword">static</span> createNode(): HTMLElement {
+    <span class="hljs-keyword">var</span> node = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'button'</span>);
+    <span class="hljs-keyword">var</span> icon = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'span'</span>);
+    <span class="hljs-keyword">var</span> text = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'span'</span>);
+    node.appendChild(icon);
+    node.appendChild(text);
+    <span class="hljs-keyword">return</span> node;
+  }
+
+  <span class="hljs-constructor"><span class="hljs-keyword">constructor</span>(text?: string) </span>{
+    <span class="hljs-keyword">super</span>();
+    <span class="hljs-keyword">this</span>.addClass(<span class="hljs-string">'Button'</span>);
+    <span class="hljs-keyword">if</span> (text) <span class="hljs-keyword">this</span>.text = text;
+  }
+
+  <span class="hljs-keyword">get</span> text(): <span class="hljs-built_in">string</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.node.lastChild.textContent;
+  }
+
+  <span class="hljs-keyword">set</span> text(text: <span class="hljs-built_in">string</span>) {
+    <span class="hljs-keyword">this</span>.node.lastChild.textContent = text;
+  }
+
+  <span class="hljs-keyword">get</span> disabled(): <span class="hljs-built_in">boolean</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.hasClass(<span class="hljs-string">'mod-disabled'</span>);
+  }
+
+  <span class="hljs-keyword">set</span> disabled(disabled: <span class="hljs-built_in">boolean</span>) {
+    <span class="hljs-keyword">this</span>.toggleClass(<span class="hljs-string">'mod-disabled'</span>, disabled);
+  }
+}
+</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
