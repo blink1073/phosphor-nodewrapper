@@ -11,8 +11,14 @@
     "browserify": "^11.0.1",
     "dts-generator": "^1.5.0",
     "expect.js": "^0.3.1",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-ie-launcher": "^0.2.0",
+    "karma-mocha": "^0.2.0",
+    "karma-mocha-reporter": "^1.1.1",
+    "karma-safari-launcher": "^0.1.1",
     "mocha": "^2.2.5",
-    "opener": "^1.4.1",
     "rimraf": "^2.4.2",
     "typedoc": "^0.3.8",
     "typescript": "^1.5.3"
@@ -25,7 +31,11 @@
     "build": "npm run build:src && npm run build:dts && npm run build:test",
     "docs": "rimraf docs/api && typedoc --options scripts/tdoptions.json",
     "prepublish": "npm run build",
-    "test": "opener test/index.html"
+    "test:chrome": "karma start --browsers=Chrome test/karma.conf.js",
+    "test:firefox": "karma start --browsers=Firefox test/karma.conf.js",
+    "test:ie": "karma start --browsers=IE test/karma.conf.js",
+    "test:safari": "karma start --browsers=Safari test/karma.conf.js",
+    "test": "npm run test:firefox"
   },
   "repository": {
     "type": "git",

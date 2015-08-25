@@ -48,7 +48,7 @@ describe('phosphor-nodewrapper', () => {
 
     });
 
-    describe('constructor', () => {
+    describe('#constructor()', () => {
 
       it('should accept no arguments', () => {
         var wrapper = new NodeWrapper();
