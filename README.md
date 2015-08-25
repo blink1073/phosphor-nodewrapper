@@ -43,7 +43,14 @@ Run Tests
 Follow the source build instructions first.
 
 ```bash
+# run tests in Firefox
 npm test
+
+# run tests in Chrome
+npm run test:chrome
+
+# run tests in IE
+npm run test:ie
 ```
 
 
@@ -72,3 +79,45 @@ Earlier versions may also work, but come with no guarantees.
 
 Usage Examples
 --------------
+
+**Note:** This module is fully compatible with Node/Babel/ES6/ES5. Simply
+omit the type declarations when using a language other than TypeScript.
+
+```typescript
+import { NodeWrapper } from 'phosphor-nodewrapper';
+
+
+class Button extends NodeWrapper {
+
+  static createNode(): HTMLElement {
+    var node = document.createElement('button');
+    var icon = document.createElement('span');
+    var text = document.createElement('span');
+    node.appendChild(icon);
+    node.appendChild(text);
+    return node;
+  }
+
+  constructor(text?: string) {
+    super();
+    this.addClass('Button');
+    if (text) this.text = text;
+  }
+
+  get text(): string {
+    return this.node.lastChild.textContent;
+  }
+
+  set text(text: string) {
+    this.node.lastChild.textContent = text;
+  }
+
+  get disabled(): boolean {
+    return this.hasClass('mod-disabled');
+  }
+
+  set disabled(disabled: boolean) {
+    this.toggleClass('mod-disabled', disabled);
+  }
+}
+```
