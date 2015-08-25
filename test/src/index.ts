@@ -11,7 +11,7 @@ import expect = require('expect.js');
 
 import {
   NodeWrapper
-} from '../lib/index';
+} from '../../lib/index';
 
 
 class CustomWrapper extends NodeWrapper {
