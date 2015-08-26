@@ -30,8 +30,6 @@ class NodeWrapper {
   /**
    * Get the DOM node managed by the wrapper.
    *
-   * @returns The DOM node managed by the wrapper.
-   *
    * #### Notes
    * This property is read-only.
    */
@@ -41,8 +39,6 @@ class NodeWrapper {
 
   /**
    * Get the id of the wrapper's DOM node.
-   *
-   * @returns The id of the DOM node.
    */
   get id(): string {
     return this._node.id;
@@ -50,11 +46,9 @@ class NodeWrapper {
 
   /**
    * Set the id of the wrapper's DOM node.
-   *
-   * @param id - The id to apply to the DOM node.
    */
-  set id(id: string) {
-    this._node.id = id;
+  set id(value: string) {
+    this._node.id = value;
   }
 
   /**
