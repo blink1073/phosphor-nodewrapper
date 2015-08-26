@@ -39,6 +39,10 @@
     "type": "git",
     "url": "https://github.com/phosphorjs/phosphor-nodewrapper.git"
   },
+  "files": [
+    "lib/index.js",
+    "lib/phosphor-nodewrapper.d.ts"
+  ],
   "keywords": [
     "dom",
     "node",
