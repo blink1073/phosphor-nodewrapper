@@ -1,6 +1,6 @@
 {
   "name": "phosphor-nodewrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A base class for creating objects which wrap a DOM node.",
   "main": "lib/index.js",
   "typescript": {
