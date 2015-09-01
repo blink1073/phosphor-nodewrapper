@@ -1,5 +1,6 @@
 phosphor-nodewrapper
 ====================
+
 [![Build Status](https://travis-ci.org/phosphorjs/phosphor-nodewrapper.svg)](https://travis-ci.org/phosphorjs/phosphor-nodewrapper?branch=master)
 [![Coverage Status](https://coveralls.io/repos/phosphorjs/phosphor-nodewrapper/badge.svg?branch=master&service=github)](https://coveralls.io/github/phosphorjs/phosphor-nodewrapper?branch=master)
 
