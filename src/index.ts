@@ -28,6 +28,18 @@ class NodeWrapper {
   }
 
   /**
+   * The static type of the constructor.
+   */
+  "constructor": typeof NodeWrapper;
+
+  /**
+   * Construct a new node wrapper.
+   */
+  constructor() {
+    this._node = this.constructor.createNode();
+  }
+
+  /**
    * Get the DOM node managed by the wrapper.
    *
    * #### Notes
@@ -115,5 +127,5 @@ class NodeWrapper {
     return present;
   }
 
-  private _node = (<typeof NodeWrapper>this.constructor).createNode();
+  private _node: HTMLElement;
 }
