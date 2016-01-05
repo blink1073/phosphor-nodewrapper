@@ -30,7 +30,6 @@
     "clean": "rimraf lib && rimraf test/build && rimraf test/coverage",
     "build": "tsc --project src",
     "docs": "rimraf docs/api && typedoc --options scripts/tdoptions.json",
-    "postinstall": "npm dedupe",
     "prepublish": "npm run build",
     "test:chrome": "karma start --browsers=Chrome test/karma.conf.js",
     "test:coverage": "karma start test/karma-cov.conf.js",
